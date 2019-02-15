@@ -3,6 +3,7 @@
 
 #include<cstdint>
 #include<algorithm>
+#include<vector>
 
 namespace merge
 {
@@ -32,6 +33,7 @@ struct Interval final
 		return (m_lower == other.m_lower) && (m_upper == other.m_upper);
 	}
 
+	static std::vector<Interval> merge(const std::vector<Interval>& intv_list);
 
 	Type m_lower;
 	Type m_upper;
