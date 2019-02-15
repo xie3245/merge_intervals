@@ -22,6 +22,17 @@ struct Interval final
 	Interval(Interval&&) noexcept = default;
 	Interval& operator=(Interval&&) noexcept = default;
 
+	inline bool operator<(const Interval& other) const noexcept
+	{
+		return (m_lower < other.m_lower);
+	}
+
+	inline bool operator==(const Interval& other) const noexcept
+	{
+		return (m_lower == other.m_lower) && (m_upper == other.m_upper);
+	}
+
+
 	Type m_lower;
 	Type m_upper;
 };
